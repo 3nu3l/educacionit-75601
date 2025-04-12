@@ -1,0 +1,9 @@
+- name: Copia de archivo dentro de AWS
+  hosts: aws
+  become: no
+  tasks:
+    - name: Copia de archivo
+      copy:
+        src: ./archivos.txt
+        dest: /home/ubuntu/
+        mode: 0644
