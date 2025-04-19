@@ -1,0 +1,12 @@
+{
+  "name": "dummy-app",
+  "version": "1.0.0",
+  "description": "Aplicación Node.js de ejemplo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
