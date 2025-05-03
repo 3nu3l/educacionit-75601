@@ -11,21 +11,17 @@ services:
       - my-network
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: 781013578291.dkr.ecr.us-east-1.amazonaws.com/curso-edit-backend:latest
+    #build:
+      #context: ./backend
+      #dockerfile: Dockerfile
+    environment:
+      - PORT=3001
     ports:
-      - "3000:3000"
+      - "3000:3001"
     networks:
       - my-network
 
 networks:
   my-network:
     driver: bridge  
-
-
-# docker login - Autenticación en un registro de Docker (en este caso AWS ECR).
-# docker-compose ps - Lista los servicios definidos en el archivo docker-compose.yml con su estado actual. En este caso muestra los servicios frontend y backend.
-# docker tag - Etiqueta una imagen local con un nombre para un registro remoto.
-# docker push - Sube imágenes etiquetadas a un registro remoto (en este caso a AWS ECR).
-# docker-compose logs - Muestra los logs de los servicios definidos en docker-compose.yml, útil para depuración.
