@@ -1,0 +1,12 @@
+services:
+  jenkins-curso-educacionit:
+    image: jenkins/jenkins:2.509
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins-curso-devops
+    volumes:
+      - ./jenkins_configuration:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
