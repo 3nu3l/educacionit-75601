@@ -1,0 +1,13 @@
+FROM node:20-slim
+
+USER root
+
+RUN apt-get update && apt-get install -y \
+    docker.io \
+    unzip \
+    curl \
+    python3-pip \
+    jq && \
+    pip3 install --break-system-packages awscli
+
+ENTRYPOINT ["/bin/bash"]

@@ -1,6 +1,6 @@
 services:
   jenkins-curso-educacionit:
-    image: jenkins/jenkins:2.509
+    build: .
     privileged: true
     user: root
     ports:
